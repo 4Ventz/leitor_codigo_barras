@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:leitor_codigo_barras/src/teste_page.dart';
 
 import 'custom_colors.dart';
@@ -12,9 +13,16 @@ class AppWidget extends StatelessWidget {
       title: 'Leitor de codigo de barras',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        useMaterial3: true,
         primarySwatch: CustomColor().mainRed,
-        textTheme:
-            const TextTheme(bodyText2: TextStyle(color: Color(0xFFFFFFFF))),
+        textTheme: GoogleFonts.ibmPlexSansTextTheme(
+          Theme.of(context).textTheme,
+        ),
+        appBarTheme: AppBarTheme(
+          centerTitle: true,
+          foregroundColor: CustomColor().offWhite,
+          backgroundColor: CustomColor().mainRed,
+        ),
       ),
       home: const TestePage(),
     );
